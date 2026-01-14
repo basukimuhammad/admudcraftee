@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { subscribeToData, saveData, resetData, formatNumber } from './services/storage';
 import { firebaseConfig, isFirebaseConfigured } from './firebaseConfig';
 import { AppData, EditType } from './types';
+import { TikTokEmbed } from "./components/TikTokEmbed";
 import { ADMIN_HASH, ADMIN_SALT } from './constants';
 import EditModal from './components/EditModal';
 
