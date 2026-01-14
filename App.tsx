@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { subscribeToData, saveData, resetData, formatNumber } from './services/storage';
 import { firebaseConfig, isFirebaseConfigured } from './firebaseConfig';
 import { AppData, EditType } from './types';
-import { TikTokEmbed } from "./components/TikTokEmbed";
 import { ADMIN_HASH, ADMIN_SALT } from './constants';
 import EditModal from './components/EditModal';
 
@@ -631,18 +630,8 @@ function App() {
                   </a>
                </div>
             </div>
-            <div className="aspect-video rounded-xl overflow-hidden shadow-lg border border-white/20 bg-black">
+            <TikTokEmbed url={data.content.tiktokUrl} />
 
-  <blockquote
-    className="tiktok-embed"
-    cite={data.content.tiktokUrl}
-    data-video-id={data.content.tiktokUrl.split('/video/')[1]}
-    style={{ maxWidth: '100%', minWidth: '100%' }}
-  >
-    <section></section>
-  </blockquote>
-
-</div>
           </div>
         </section>
 
