@@ -15,7 +15,7 @@ export function TikTokEmbed({ url }: { url: string }) {
 
   if (!url || !url.includes("/video/")) return null;
 
-  const videoId = url.split("/video/")[1].split("?")[0];
+  const videoId = url.split("/video/")[1]?.split("?")[0];
 
   return (
     <div
