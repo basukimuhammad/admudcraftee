@@ -630,17 +630,18 @@ function App() {
                   </a>
                </div>
             </div>
-            <div className="flex justify-center items-center bg-gradient-to-br from-gray-900 to-black rounded-xl border border-white/20 p-4 text-white">
-               <div className="text-center w-full">
-                 <div className="mb-4 text-5xl">
-                    <i className="fab fa-tiktok text-pink-500 animate-pulse"></i>
-                 </div>
-                 <p className="mb-4 font-bold opacity-90">Check out the latest TikTok</p>
-                 <a href={data.content.tiktokUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center px-6 py-3 bg-[#fe2c55] text-white rounded-full hover:scale-105 transition gap-2 shadow-lg w-full max-w-[200px] font-bold">
-                   <i className="fab fa-tiktok"></i> Watch Now
-                 </a>
-               </div>
-            </div>
+            <div className="aspect-video rounded-xl overflow-hidden shadow-lg border border-white/20 bg-black">
+
+  <blockquote
+    className="tiktok-embed"
+    cite={data.content.tiktokUrl}
+    data-video-id={data.content.tiktokUrl.split('/video/')[1]}
+    style={{ maxWidth: '100%', minWidth: '100%' }}
+  >
+    <section></section>
+  </blockquote>
+
+</div>
           </div>
         </section>
 
