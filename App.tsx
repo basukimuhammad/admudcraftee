@@ -471,17 +471,19 @@ function App() {
   <h4 className="text-sm font-bold truncate">{member.name}</h4>
 
   {member.youtubeHandle && (
-    <a
-      href={`https://www.youtube.com/${member.youtubeHandle.startsWith('@') 
-  ? member.youtubeHandle 
-  : `@${member.youtubeHandle}`}
-      target="_blank"
-      rel="noreferrer"
-      className="text-xs text-red-500 hover:underline block"
-    >
-      {member.youtubeHandle}
-    </a>
-  )}
+  <a
+    href={`https://www.youtube.com/${
+      member.youtubeHandle.startsWith('@')
+        ? member.youtubeHandle
+        : `@${member.youtubeHandle}`
+    }`}
+    target="_blank"
+    rel="noreferrer"
+    className="text-xs text-red-500 hover:underline block"
+  >
+    {member.youtubeHandle}
+  </a>
+)}
 
   <p className="text-xs opacity-70 mt-1">
     <i className="fas fa-star text-yellow-400 mr-1"></i>
@@ -580,13 +582,15 @@ function App() {
                       </h4>
                       {mod.youtubeHandle && (
   <a
-    href={`https://www.youtube.com/${mod.youtubeHandle.startsWith('@') 
-  ? mod.youtubeHandle 
-  : `@${mod.youtubeHandle}`}
-    target="_blank"
-    rel="noreferrer"
-    className="text-[11px] text-pink-500 hover:underline"
-  >
+  href={`https://www.youtube.com/${
+    mod.youtubeHandle.startsWith('@')
+      ? mod.youtubeHandle
+      : `@${mod.youtubeHandle}`
+  }`}
+  target="_blank"
+  rel="noreferrer"
+  className="text-[11px] text-pink-500 hover:underline"
+>
     {mod.youtubeHandle}
   </a>
 )}
