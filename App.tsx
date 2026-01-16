@@ -472,7 +472,7 @@ function App() {
 
   {member.youtubeHandle && (
     <a
-      href={`https://m.youtube.com/${
+      href={`https://www.youtube.com/${
         member.youtubeHandle.startsWith('@')
           ? member.youtubeHandle
           : `@${member.youtubeHandle}`
