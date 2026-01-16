@@ -472,7 +472,9 @@ function App() {
 
   {member.youtubeHandle && (
     <a
-      href={`https://youtube.com/${member.youtubeHandle.replace('@', '')}`}
+      href={`https://www.youtube.com/${member.youtubeHandle.startsWith('@') 
+  ? member.youtubeHandle 
+  : `@${member.youtubeHandle}`}
       target="_blank"
       rel="noreferrer"
       className="text-xs text-red-500 hover:underline block"
@@ -578,7 +580,9 @@ function App() {
                       </h4>
                       {mod.youtubeHandle && (
   <a
-    href={`https://youtube.com/${mod.youtubeHandle.replace('@', '')}`}
+    href={`https://www.youtube.com/${mod.youtubeHandle.startsWith('@') 
+  ? mod.youtubeHandle 
+  : `@${mod.youtubeHandle}`}
     target="_blank"
     rel="noreferrer"
     className="text-[11px] text-pink-500 hover:underline"
