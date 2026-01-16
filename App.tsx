@@ -589,10 +589,11 @@ function App() {
   }`}
   target="_blank"
   rel="noreferrer"
-  className="text-[11px] text-pink-500 hover:underline"
+  onClick={(e) => e.stopPropagation()}
+  className="inline-flex w-fit text-[11px] text-pink-500 hover:underline cursor-pointer"
 >
-    {mod.youtubeHandle}
-  </a>
+  {mod.youtubeHandle}
+</a>
 )}
                       <div className="flex items-center gap-2">
                          <div className="h-1.5 w-16 bg-purple-200 dark:bg-purple-900 rounded-full overflow-hidden">
