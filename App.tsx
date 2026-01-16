@@ -452,7 +452,11 @@ function App() {
             {activeRankTab === 'members' && (
               <div className="space-y-3 flex-1 overflow-y-auto max-h-[300px] pr-1 scrollbar-thin">
                 {data.rank.map((member, index) => (
-                  <div key={member.id} className="flex items-center p-3 rounded-xl bg-white/40 dark:bg-black/20 border border-white/20 relative group hover:scale-[1.02] transition">
+                  <div
+  key={member.id}
+  onClick={(e) => e.stopPropagation()}
+  className="flex items-center p-3 rounded-xl bg-white/40 dark:bg-black/20 border border-white/20 relative group hover:scale-[1.02] transition"
+>
                      {isAdmin && (
                         <div className="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition z-20">
                             <button onClick={() => openEdit('rank', index)} className="w-6 h-6 bg-green-500 rounded-full text-white text-xs flex items-center justify-center shadow-sm hover:scale-110">
@@ -472,14 +476,17 @@ function App() {
 
   {member.youtubeHandle && (
   <a
-    href={`https://www.youtube.com/${
+    href={`https://m.youtube.com/${
       member.youtubeHandle.startsWith('@')
         ? member.youtubeHandle
         : `@${member.youtubeHandle}`
     }`}
     target="_blank"
     rel="noreferrer"
-    className="text-xs text-red-500 hover:underline block"
+    onClick={(e) => {
+      e.stopPropagation();
+    }}
+    className="inline-flex w-fit max-w-fit text-xs text-red-500 hover:underline cursor-pointer"
   >
     {member.youtubeHandle}
   </a>
@@ -589,11 +596,10 @@ function App() {
   }`}
   target="_blank"
   rel="noreferrer"
-  onClick={(e) => e.stopPropagation()}
-  className="inline-flex w-fit text-[11px] text-pink-500 hover:underline cursor-pointer"
+  className="text-[11px] text-pink-500 hover:underline"
 >
-  {mod.youtubeHandle}
-</a>
+    {mod.youtubeHandle}
+  </a>
 )}
                       <div className="flex items-center gap-2">
                          <div className="h-1.5 w-16 bg-purple-200 dark:bg-purple-900 rounded-full overflow-hidden">
