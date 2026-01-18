@@ -467,8 +467,9 @@ function App() {
                       {member.rank}
                     </div>
                     <img src={member.avatar} alt="Avatar" className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 mr-3 object-cover" />
-                    <div className="flex-1 min-w-0">
+<div className="flex-1 min-w-0">
   <h4 className="text-sm font-bold truncate">{member.name}</h4>
+
   {member.youtubeHandle && (
     <a
       href={`https://www.youtube.com/${
